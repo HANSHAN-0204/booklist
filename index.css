@@ -6,6 +6,15 @@ body {
     padding: 20px;
 }
 
+.top {
+    height: 2rem;
+    position: sticky;
+    top: 0;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+}
+
 .search {
     width: 75%;
     height: 1.5rem;
