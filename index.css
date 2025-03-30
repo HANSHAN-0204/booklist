@@ -68,7 +68,7 @@ input {
     font-family: "Noto Serif TC", serif;
     color: #C995A2;
     border-radius: 3px;
-    background-color: rgba(226, 195, 201, 0.1);
+    background-color: rgba(226, 195, 201, 0.5);
 }
 
 th {
