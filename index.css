@@ -11,12 +11,13 @@ body {
 }
 
 a {
+    font-size: 0.75rem;
     height: 40px;
     text-decoration: none;
     font-family: "Noto Serif TC", serif;
     color: white;
     padding-block: 5px;
-    padding-inline: 5%;
+    padding-inline: 10%;
     line-height: 40px;
     border-radius: 5px;
     margin-block: 10px;
