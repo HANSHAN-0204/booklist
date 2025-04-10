@@ -1,0 +1,21 @@
+body {
+    width: 40%;
+    height: 100vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+a {
+    height: 60px;
+    text-decoration: none;
+    color: white;
+    padding-block: 5px;
+    padding-inline: 60px;
+    line-height: 60px;
+    border-radius: 10px;
+    margin-block: 20px;
+    border: none;
+}
