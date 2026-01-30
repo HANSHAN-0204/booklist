@@ -128,7 +128,7 @@
 
                     div.innerHTML = `
                         <p class="book">
-                          <a href="#" class="locked" data-url="${book.url}">${book.title}</a><br>
+                          <a href="#" class="locked" data-url="BGnovels/${book.url}">${book.title}</a><br>
                           <span>作者：${book.author}</span><br>
                           ${book.tags.map(t => `#${t}`).join(" ")}<br>
                           <span style="font-size: 0.6rem;">${book.desc || ""}</span>
