@@ -149,21 +149,6 @@
             const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(text));
             return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
         }
-        unlockButton.addEventListener("click", async () => {
-            const inputPassword = await sha256(passwordInput.value);
-
-            if (inputPassword === correctPassword) {
-                document.querySelectorAll(".locked").forEach(link => {
-                    link.classList.remove("locked");
-                    link.style.color = "#5A7FA2";
-                    link.style.pointerEvents = "auto";
-                    link.style.fontSize = "1rem";
-                    link.href = link.getAttribute("data-url");
-                });
-            } else {
-                alert("功能施工中！");
-            }
-        });
 
         function getItems() {
             return document.querySelectorAll(".item");
@@ -208,6 +193,22 @@
                 }
             });
         }
+
+        unlockButton.addEventListener("click", async () => {
+            const inputPassword = await sha256(passwordInput.value);
+
+            if (inputPassword === correctPassword) {
+                document.querySelectorAll(".locked").forEach(link => {
+                    link.classList.remove("locked");
+                    link.style.color = "#5A7FA2";
+                    link.style.pointerEvents = "auto";
+                    link.style.fontSize = "1rem";
+                    link.href = link.getAttribute("data-url");
+                });
+            } else {
+                alert("功能施工中！");
+            }
+        });
     </script>
 </body>
 

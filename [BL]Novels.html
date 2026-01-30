@@ -162,7 +162,11 @@
         const resetButton = document.getElementById("reset-btn");
         const unlockButton = document.getElementById("unlock-btn");
         const passwordInput = document.getElementById("password");
-        const correctPassword = "誠實精靈從不騙人";
+        const correctPassword = "9e2a372925a05085aec768229ea54418eca9a1311d3713c81fe8c2dc90873029";
+        async function sha256(text) {
+            const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(text));
+            return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+        }
 
         function getItems() {
             return document.querySelectorAll(".item");
@@ -208,8 +212,10 @@
             });
         }
 
-        unlockButton.addEventListener("click", () => {
-            if (passwordInput.value === correctPassword) {
+        unlockButton.addEventListener("click", async () => {
+            const inputPassword = await sha256(passwordInput.value);
+
+            if (inputPassword === correctPassword) {
                 document.querySelectorAll(".locked").forEach(link => {
                     link.classList.remove("locked");
                     link.style.color = "#5A7FA2";
